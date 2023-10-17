@@ -1,82 +1,80 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import logo from '../../assets/images/motivateme/logo.png';
-import appStore from '../../assets/images/motivateme/appStore.png';
-import googlePlay from '../../assets/images/motivateme/googlePlay.png';
-import background from '../../assets/images/motivateme/background.png';
+import Layout from "../../layouts/Layout.astro";
+import logo from "../../assets/images/motivateme/logo.png";
+import appStore from "../../assets/images/motivateme/appStore.png";
+import googlePlay from "../../assets/images/motivateme/googlePlay.png";
+import background from "../../assets/images/motivateme/background.png";
 
-import screenshot_1 from '../../assets/images/motivateme/screenshots/screenshot_1.png';
-import screenshot_2 from '../../assets/images/motivateme/screenshots/screenshot_2.png';
-import screenshot_3 from '../../assets/images/motivateme/screenshots/screenshot_3.png';
-
+import screenshot_1 from "../../assets/images/motivateme/screenshots/screenshot_1.png";
+import screenshot_2 from "../../assets/images/motivateme/screenshots/screenshot_2.png";
+import screenshot_3 from "../../assets/images/motivateme/screenshots/screenshot_3.png";
 
 const APP_NAME = "MotivateMe";
-const TAGLINE_TEXT = "Generate personalized motivational messages at your finger tip";
+const TAGLINE_TEXT =
+  "Generate personalized motivational messages at your fingertips";
 const APPSTORE_ALT_TEXT = "Download on the App Store";
 const GOOGLEPLAY_ALT_TEXT = "Get it on Google Play";
 ---
 
 <Layout title="MotivateMe">
-    <style>
-      .motivateme-container {
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-image: url('../../assets/images/motivateme/background.png');
-        background-size: cover;
-      }
-  
+  <style>
+    .motivateme-container {
+      width: 100vw;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-image: url("../../assets/images/motivateme/background.png");
+      background-size: cover;
+    }
 
+    .tagline {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      padding: 10px;
+      text-align: center;
+    }
 
-      
-      .tagline {
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 40px;
-      }
-  
-      .download-buttons {
-        display: flex;
-        gap: 20px;
-      }
+    .logo {
+      width: 75px;
+      margin-bottom: 20px;
+    }
 
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 64px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      font-family: "Playfair Display", serif;
+      padding: 10px;
+    }
+  </style>
 
-      .logo {
-        width: 75px;
-        margin-bottom: 20px;
-      }
-
-      .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 10px; 
-            font-size: 64px;
-            font-weight: bold;
-            margin-bottom: 40px;
-            font-family: 'Playfair Display', serif; 
-        }
-
-    </style>
-
-
-    <div class="motivateme-container">
-        <div class="logo-container">
-            <img src={logo.src} alt="MotivateMe Logo" class="logo"/>
-            <h3>MotivateMe</h3>
-          </div>
-      <div class="tagline">{TAGLINE_TEXT}</div>
-      <div class="download-buttons">
-        <a href="#">
-          <img src={appStore.src} alt={APPSTORE_ALT_TEXT} />
-        </a>
-        <a href="#">
-          <img src={googlePlay.src} alt={GOOGLEPLAY_ALT_TEXT} />
-        </a>
-      </div>
+  <div class="motivateme-container py-20">
+    <div class="logo-container">
+      <img src={logo.src} alt={APP_NAME} class="logo" />
+      <h3 style={{ fontSize: "3rem" }}>{APP_NAME}</h3>
     </div>
-
-
+    <div class="tagline">{TAGLINE_TEXT}</div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <a href="#">
+        <img src={appStore.src} alt={APPSTORE_ALT_TEXT} />
+      </a>
+      <a href="#">
+        <img src={googlePlay.src} alt={GOOGLEPLAY_ALT_TEXT} />
+      </a>
+    </div>
+    <div
+      class="flex flex-row flex-wrap justify-center mt-20 gap-20"
+      style={{ width: "100%" }}
+    >
+      <img src={screenshot_1.src} alt="Screenshot 1" />
+      <img src={screenshot_2.src} alt="Screenshot 2" />
+      <img src={screenshot_3.src} alt="Screenshot 3" />
+    </div>
+  </div>
 </Layout>
