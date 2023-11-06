@@ -1,0 +1,35 @@
+---
+import Contactform from "@components/contactform.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+import { Icon } from "astro-icon";
+---
+
+<Layout title="Feedback | Progresse">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Feedback</Fragment>
+      <Fragment slot="desc">
+        <b>We really value your feedback!</b> Your thoughts and suggestions are crucial to us. They enable us to continually enhance Progresse and deliver a better experience.
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
+      <div class="mt-5">
+        <div class="flex items-center mt-2 space-x-2 text-gray-600">
+          <span> <b>You can also send us an email 📧 </b> </span>
+        </div>
+        <div class="flex items-center mt-2 space-x-2 text-gray-600">
+          <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" />
+          <a href="mailto:pksw.innovationlabs@gmail.com" class="cursor-pointer"
+            >pksw.innovationlabs@gmail.com
+          </a>
+        </div>
+      </div>
+      <div>
+        <Contactform />
+      </div>
+    </div>
+  </Container>
+</Layout>

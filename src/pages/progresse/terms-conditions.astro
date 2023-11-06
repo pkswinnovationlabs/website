@@ -2,16 +2,17 @@
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Layout from "@layouts/Layout.astro";
-import PrivacyPolicyGeneric from "@components/policies/motivateme-privacy-policy.astro";
+import PrivacyPolicyGeneric from "@components/terms-conditions/progresse-terms-conditions.astro";
 ---
 
-<Layout title="Privacy Policy">
+<Layout title="TERMS AND CONDITIONS">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Privacy Policy</Fragment>
-      <Fragment slot="desc">Please see our privacy policy below.</Fragment>
+      <Fragment slot="title">TERMS AND CONDITIONS</Fragment>
+      <Fragment slot="desc">Please see our TERMS AND CONDITIONS below.</Fragment>
     </Sectionhead>
   </Container>
+
   <div style={{ padding: "25px", maxWidth: "1200px", margin: "0 auto" }}>
     <PrivacyPolicyGeneric />
   </div>
