@@ -1,1 +1,78 @@
-### PROGRESSE
+---
+import Layout from "../../layouts/Layout.astro";
+import logo from "../../assets/images/progresse/logo.png"
+
+import appStore from "../../assets/images/progresse/appStore.png";
+import googlePlay from "../../assets/images/progresse/playStore.png";
+import background from "../../assets/images/motivateme/background.png";
+
+import screenshot_1 from "../../assets/images/progresse/screenshots/screenshot_1.png";
+import screenshot_2 from "../../assets/images/progresse/screenshots/screenshot_2.png";
+import screenshot_3 from "../../assets/images/progresse/screenshots/screenshot_3.png";
+
+const APP_NAME = "PROGRESSE";
+const TAGLINE_TEXT =
+  "Minimal workout tracker | No ads, No Paywalls, Only gains";
+const APPSTORE_ALT_TEXT = "Download on the App Store";
+const GOOGLEPLAY_ALT_TEXT = "Get it on Google Play";
+---
+
+<Layout title="PROGRESSE">
+  <style>
+    .motivateme-container {
+      width: 100vw;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      /* background-image: url("../../assets/images/motivateme/background.png"); */
+      background-size: cover;
+    }
+
+    .tagline {
+      font-size: 20px;
+      margin-bottom: 40px;
+      text-align: center;
+      font-weight: 300;
+    }
+
+    .logo {
+      width: 75px;
+      margin-bottom: 20px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 146px;
+      /* font-weight: bold; */
+      font-family: "Playfair Display", serif;
+    }
+  </style>
+
+  <div class="motivateme-container py-20">
+    <div class="logo-container">
+      <img src={logo.src} alt={APP_NAME} class="logo" />
+      <h3 style={{ fontSize: "4rem" }}>{APP_NAME}</h3>
+    </div>
+    <div class="tagline">{TAGLINE_TEXT} </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <a href="https://apps.apple.com/us/app/progresse/id6471344431">
+        <img src={appStore.src} alt={APPSTORE_ALT_TEXT} />
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.pkswinnovationlabs.progresseapp">
+        <img src={googlePlay.src} alt={GOOGLEPLAY_ALT_TEXT} />
+      </a>
+    </div>
+    <div
+      class="flex flex-row flex-wrap justify-center mt-20 gap-20"
+      style={{ width: "100%" }}
+    >
+      <img src={screenshot_1.src} alt="Screenshot 1" />
+      <img src={screenshot_2.src} alt="Screenshot 2" />
+      <img src={screenshot_3.src} alt="Screenshot 3" />
+    </div>
+  </div>
+</Layout>
