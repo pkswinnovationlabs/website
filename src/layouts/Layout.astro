@@ -12,10 +12,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 let resolvedImageWithDomain = "";
 switch (Astro.url.pathname) {
-  case "progresse":
+  case "/progresse":
     resolvedImageWithDomain = new URL("/progresse_public.png", Astro.site).toString();
     break;
-  case "motivateme":
+  case "/motivateme":
     resolvedImageWithDomain = new URL("/motivateme_public.png", Astro.site).toString();
     break;
   default:
@@ -34,16 +34,16 @@ const makeTitle = title
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon_pksw.png" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="PKSW Innovation Labs - app development agency"
+      description="PKSW Innovation Labs - AI development agency"
       canonical={canonicalURL}
       twitter={{
-        creator: "@surjithctly",
+        creator: "@pkswinnovationlabs",
         site: "@web3templates",
         card: "summary_large_image",
       }}
