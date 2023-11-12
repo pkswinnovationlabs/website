@@ -12,10 +12,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 let resolvedImageWithDomain = "";
 switch (Astro.url.pathname) {
-  case "/progresse":
+  case "/progresse/":
     resolvedImageWithDomain = new URL("/progresse_public.png", Astro.site).toString();
     break;
-  case "/motivateme":
+  case "/motivateme/":
     resolvedImageWithDomain = new URL("/motivateme_public.png", Astro.site).toString();
     break;
   default:
