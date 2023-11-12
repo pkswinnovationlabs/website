@@ -10,10 +10,17 @@ export interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
-const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
-  Astro.site
-).toString();
+let resolvedImageWithDomain = "";
+switch (Astro.url.pathname) {
+  case "progresse":
+    resolvedImageWithDomain = new URL("/progresse_public.png", Astro.site).toString();
+    break;
+  case "motivateme":
+    resolvedImageWithDomain = new URL("/motivateme_public.png", Astro.site).toString();
+    break;
+  default:
+    resolvedImageWithDomain = new URL("/favicon_pksw.png", Astro.site).toString();
+}
 
 const { title } = Astro.props;
 
@@ -33,7 +40,7 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Astroship is a starter website template for Astro built with TailwindCSS."
+      description="PKSW Innovation Labs - app development agency"
       canonical={canonicalURL}
       twitter={{
         creator: "@surjithctly",
@@ -44,7 +51,7 @@ const makeTitle = title
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Astroship - Starter Template for Astro`,
+          title: `PKSW Innovation Labs`,
           image: resolvedImageWithDomain,
         },
         image: {
